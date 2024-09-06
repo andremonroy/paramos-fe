@@ -2,27 +2,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     let bannerImages = [
         {
-            "url": "imagenes/banner/carrusel1.webp",
+            "url": "../imagenes/banner/carrusel1.webp",
             "nombre": "Banner 01",
             "descripcion": "MiniCooper"
         },
         {
-            "url": "imagenes/banner/carrusel2.webp",
+            "url": "../imagenes/banner/carrusel2.webp",
             "nombre": "Banner 02",
             "descripcion": "Enjoying"
         },
         {
-            "url": "imagenes/banner/carrusel3.webp",
+            "url": "../imagenes/banner/carrusel3.webp",
             "nombre": "Banner 03",
             "descripcion": "Family"
         },
         {
-            "url": "imagenes/banner/carrusel4.webp",
+            "url": "../imagenes/banner/carrusel4.webp",
             "nombre": "Banner 04",
             "descripcion": "On the road"
         },
         {
-            "url": "imagenes/banner/carrusel5.webp",
+            "url": "../imagenes/banner/carrusel5.webp",
             "nombre": "Banner 05",
             "descripcion": "Luxury"
         },
