@@ -1,0 +1,396 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    /*border: 4px solid rgb(236, 18, 127);*/
+}
+
+/*-------- BARRA DE NAVEGACION - MENU --------*/
+/* Estilos para el header y el menú */
+.header {
+    /*border: 4px solid rgb(225, 246, 35);*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1B1B1B;
+}
+
+.header__logo--img {
+    height: 50px;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu__list {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.menu__list--item {
+    position: relative;
+}
+
+.menu__list--link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu__list--link:hover {
+    background-color: #F54703;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Para dispositivos móviles quitar el carrusel de imagenes */
+@media (max-width: 768px) {
+    /* Esto se elimina para reemplazarlo por menu hamburguesa
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu__list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    */
+    .main__banner2 {
+        display: none !important;
+    }
+}
+
+/*-------- MAIN --------*/
+
+.flex-container{
+    /*border: 4px solid rgb(35, 246, 74);*/
+
+    display: flex;
+    overflow: hidden;
+    padding: 20px 40px 20px 40px;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    /*margin: 3%;*/
+}
+
+/*Banner imagenes con javascript*/
+.main{
+    /*border: 4px solid rgb(35, 236, 246);*/
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /*Ver si estos funcionan:*/
+    /*width: 100%;*/
+    /*height: 100vh; 
+    height: auto;*/
+}
+
+.main__banner2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    /*height: 100vh;*/
+}
+
+.main__banner2--imagesAndButtons{ /*carrusel*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /*width: 100%;
+    height: 100vh;*/
+
+    /*width: 100vw;
+    height: 80vh;*/
+}
+
+/*Pone la mano sobre los iconos*/
+.main__banner2--atras,
+.main__banner2--adelante{
+    cursor: pointer;
+}
+
+.main__banner2--container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.main__banner2--carPhoto{
+    box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.85);
+    height: 576px;
+    width: 1134px;
+    border-radius: 15px;
+    margin: 5px;
+    object-fit: cover;
+    filter: saturate(175%);
+}
+
+.main__banner2--text{
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    flex-direction: column;
+    transform: translateY(0px);
+    margin-bottom: 9px;
+    backdrop-filter: blur(20px);
+    background-color: rgba(63,106,138,0.21);
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.main__banner2--text h3{
+    text-shadow: 0px 0px 15px #000;
+    padding-top: 40px;
+    color: white;
+    font-weight: 300;
+    font-size: 27px;
+}
+
+.main__banner2--text p{
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 0px;
+    font-weight: 300;
+}
+
+.main__banner2--container .main__banner2--text{
+    width: 600px;
+    height: 100px;
+    transition: 1s;
+}
+
+.main__banner2--container:hover .main__banner2--text{
+    transition: height 1s, trasnform 1s, background-color 1s;
+    transform: translateY(-150px);
+    height: 300px;
+    background-color: rgba(63, 106, 138, 0.71);
+}
+
+.main__banner2--container:hover .main__banner2--text p{
+    transition: font-size 0s .2s linear;
+    font-size: 23px;
+    font-weight: 300;
+    text-shadow: 0px 0px 10px #000000;
+}
+
+.puntos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*margin-top: 20px;*/
+}
+
+.puntos p{
+    font-size: 100px;
+    font-weight: 500;
+    margin-top: -60px;
+    color: black;
+    height: 7vh;
+}
+
+.puntos .bold{
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #F54703;
+}
+/* Fin Banner imagenes con javascript*/
+
+
+.main__titulo--texto{
+    justify-content: center;
+    padding: 10px 8vw 10px 8vw;
+}
+
+/*---- GALERIA DE CARROS ----*/
+.main__galeria{
+    gap: 20px;
+    justify-content: start;
+    display: flex;
+    overflow-x: auto;
+    padding: 0px 40px 40px 40px;
+
+}
+
+.main__galeria--photo{
+    height: 20vw;
+    /*width: 100%;*/
+}
+
+/*Agregar descripcion a cada carro*/
+.main__galeria--carContainer{
+    border: 2px solid rgba(33, 225, 228, 0.94);
+    display: flex;
+    flex-direction: column;
+    
+    flex: 0 0 auto; /*Contenedor mantiene tamaño definido por min-width/height, sin crecer ni encogerse*/
+    min-width: 15vw;
+    /*width: calc((100% - 60px) / 4); /* Change the number of visible items */
+}
+
+.main__galeria--carImageContainer{
+    border: 2px solid rgb(237, 138, 40);
+    /*flex: 2;*/
+}
+
+.main__galeria--carInfoContainer{
+    border: 2px solid rgb(45, 45, 218);
+    padding: 10px;
+    font-size: 12px;
+    align-self: center;
+    /*text-align: center;*/
+    /*flex: 1;*/
+}
+
+.main__galeria--carInfoContainer h3, 
+.main__galeria--carInfoContainer h5 {
+    margin: 5px 10px;
+}
+/*Fin Segmento Agregar descripcion a cada carro*/
+
+
+
+
+/*---- Listado de marcas ----*/
+
+.main__brands{
+    padding: 0px 40px 40px 40px;
+}
+
+.main__brands--photo{
+    height: 10vw;
+    /*width: 100%;
+    margin: 5px;*/
+}
+
+/*-------- FOOTER --------*/
+.footer {
+    background-color: #1B1B1B;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__social a {
+    color: #ffffff;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.footer__social a:hover {
+    color: #F54703;
+}
+
+.footer__info p {
+    margin: 10px 0;
+}
+
+.footer__info a {
+    color: #F54703;
+    text-decoration: none;
+}
+
+.footer__info a:hover {
+    text-decoration: underline;
+}
+
+
+/*-----MENU HAMBURGUESA------*/
+
+.abrir__menu{
+    display: none;
+    background-color: #1B1B1B;
+    color: #fff;
+    cursor: pointer;
+    
+}
+
+.cerrar__menu{
+    display: none;
+}
+
+/*Menu hamburguesa*/
+@media screen and (max-width: 768px){
+   
+    .abrir__menu {
+        display: block;
+        font-size: 1.5rem;
+        border: 0;
+    }
+
+    .cerrar__menu{
+        display: block;
+        font-size: 2rem;
+        border: 0;
+        background-color: #1c1c1c;
+        color: #ececec;
+        cursor: pointer;
+    }
+
+    .nav{
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.2rem;
+        position: absolute;
+        padding: 1rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #1c1c1c;
+        transition: ease-in-out 0.5s ease;
+    }
+
+    .nav.visible{
+        visibility: visible;
+        
+    }
+
+    .nav-list{
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 3rem;
+    
+
+    }
+
+    .nav-list li a{
+        color: #ececec
+    }
+
+    
+}
