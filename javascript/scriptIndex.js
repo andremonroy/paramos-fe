@@ -2,14 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     let bannerImages = [
         {
-            "url": "../imagenes/banner/carrusel1.webp",
+            "url": "../imagenes/banner/paramo4.jpg",
             "nombre": "Banner 01",
-            "descripcion": "MiniCooper"
+            "descripcion": "Paramo Sumapaz"
         },
         {
-            "url": "../imagenes/banner/carrusel2.webp",
+            "url": "../imagenes/banner/paramo3.jpg",
             "nombre": "Banner 02",
-            "descripcion": "Enjoying"
+            "descripcion": "Paramo "
         },
         {
             "url": "../imagenes/banner/carrusel3.webp",
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "descripcion": "On the road"
         },
         {
-            "url": "../imagenes/banner/carrusel5.webp",
+            "url": "../imagenes/banner/paramo3.jpg",
             "nombre": "Banner 05",
             "descripcion": "Luxury"
         },
