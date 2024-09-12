@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/indexVerde2.css">
+    <link rel="stylesheet" href="../css/powerBIDashboard.css"> <!-- Nueva hoja de estilos -->
     <link rel="shortcut icon" href="../favicon_io/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/plants3.css">
     <script defer src="../javascript/hamburgerMenu.js"></script>
-    <title>Form plantas</title>
+    <title>Dashboard</title>
 </head>
+
 <body>
+    <!-- Barra de navegación -->
     <header class="header">
         <div class="header__logo">
             <a href="../html/index.html">
-                <img class="header__logo--img" src="../imagenes/TerraverdeLogo2.png" alt="descripcion">
+                <img class="header__logo--img" src="../imagenes/TerraverdeLogo2.png" alt="Terraverde Logo">
             </a>
         </div>
 
-        <div class="header__menu">
+        <div class="header__menu ">
             <button class="abrir__menu" id="abrir">
                 <i class="bi bi-list"></i>
             </button>
@@ -27,6 +29,7 @@
                 <button class="cerrar__menu" id="cerrar">
                     <i class="bi bi-x"></i>
                 </button>
+
                 <ul class="menu__list nav-list">
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Inicio</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/powerBIDashboard.html">Dashboard</a></li>
@@ -34,24 +37,20 @@
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>
                 </ul>
             </nav>
-        </div>       
+        </div>
     </header>
 
-    <main class="main">
-        <section class="form-section">
-            <h2>Datos de la planta</h2>
-            <form action="#" id="plantsForm" method="POST">
-                <input type="text" id="tag" name="tag" placeholder="Tag de la planta" required>
-                <input type="text" id="especie" name="especie" placeholder="Especie de la planta" required>
-                <input type="date" id="fecha-germinacion" name="fecha-germinacion" placeholder="Fecha de germinación" required>
-                <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required>
-                <textarea id="condiciones-iniciales" name="condiciones" placeholder="Condiciones de Crecimiento Inicial" required></textarea>
-
-                <button type="submit" id="botonEnviar">Enviar</button>
-            </form>
+    <!-- Main content -->
+    <main class="dashboard">
+        <section class="dashboard__iframe-container">
+            <iframe title="Clase05092024" width="1140" height="541.25" 
+                src="https://app.powerbi.com/reportEmbed?reportId=5a881ae7-1e22-4101-8e43-d2da09119f26&autoAuth=true&ctid=fabd047c-ff48-492a-8bbb-8f98b9fb9cca" 
+                frameborder="0" allowfullscreen="true">
+            </iframe>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__social">
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -66,7 +65,5 @@
     </footer>
 
     <script src="../javascript/scriptIndex.js"></script>
-    <script src="../src/plants/plants.js"></script>
-
 </body>
 </html>

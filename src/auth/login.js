@@ -27,15 +27,43 @@ window.onload = (event) => {
             console.log(data);
             const encodeData = btoa(JSON.stringify(data));
             console.log(encodeData);
-
-            if (response.ok) {
+            
+            /*if (response.ok) {
                 loginMessage.textContent = 'Login Exitoso';
                 loginMessage.style.color = 'green'
                 window.location.href = `./formPlants2.html#${encodeData}`;
             } else {
                 loginMessage.textContent = data.message || 'Error en el Login';
                 loginMessage.style.color = 'red'
-            }
+            }*/
+                if (response.ok) {
+                    loginMessage.textContent = 'Login exitoso. Redirigiendo...';
+                    loginMessage.style.color = '#4d6656'; // Verde sutil
+                    loginMessage.style.backgroundColor = '#e5f5e0'; // Verde claro
+                    loginMessage.style.padding = '10px';
+                    loginMessage.style.borderRadius = '5px';
+                    loginMessage.style.marginTop = '20px';
+                    loginMessage.style.fontSize = '0.9rem';
+                    loginMessage.style.textAlign = 'center';
+                
+                    // Redirigir a Formulario plantas después de mostrar el mensaje
+                    setTimeout(() => {
+                        window.location.href = `./formPlants2.html#${encodeData}`;
+                    }, 1000); // 1 segundo de retraso antes de la redirección
+                } else {
+                    loginMessage.textContent = 'Usuario o contraseña incorrectos. Verifica e intenta de nuevo.';
+                    loginMessage.style.color = '#6b7b6e'; // Gris-verdoso
+                    loginMessage.style.backgroundColor = '#f9f9f9'; // Blanco suave
+                    loginMessage.style.border = '1px solid #cccccc';
+                    loginMessage.style.padding = '10px';
+                    loginMessage.style.borderRadius = '5px';
+                    loginMessage.style.marginTop = '20px'; 
+                    loginMessage.style.fontSize = '0.9rem';
+                    loginMessage.style.textAlign = 'center';
+                }
+                
+                
+                
         } catch (error) {
             console.log (error)
             loginMessage.textContent = 'Hubo un Error en el Login';
