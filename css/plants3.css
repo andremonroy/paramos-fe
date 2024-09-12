@@ -1,0 +1,111 @@
+:root {
+    --fern-green: #4c7550ff;
+    --dark-green: #112d21ff;
+    --british-racing-green: #1a3d26ff;
+    --avocado: #6a8b25ff;
+    --dark-green-2: #1a3728ff;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header, .footer {
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-section {
+    background-color: white;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    position: relative;
+}
+
+.form-section h2 {
+    color: var(--british-racing-green);
+    margin-bottom: 20px; /* Menor separación entre el título y los campos */
+    font-size: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 12px;
+    border: none; /* Sin bordes */
+    border-bottom: 1px solid #ccc; /* Solo borde inferior */
+    border-radius: 0; /* Sin bordes redondeados */
+    background-color: white;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio entre cada campo */
+}
+
+textarea {
+    border: 1px solid #ccc; /* Borde completo para el textarea */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+input:focus, textarea:focus {
+    border-bottom: 1px solid var(--avocado); /* Solo el borde inferior cambia de color en el foco */
+    outline: none;
+    box-shadow: none;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+input[type="date"] {
+    color: #333; /* Color del texto al seleccionar fecha */
+}
+
+button {
+    padding: 12px;
+    background-color: var(--avocado);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* Centra el botón */
+    width: 50%; /* Anchura ajustada */
+    display: block;
+    text-align: center;
+}
+
+button:hover {
+    background-color: var(--fern-green);
+}
+
+/* Imagen a la izquierda que ocupe el espacio */
+.image-section {
+    flex: 1;
+    background-image: url('../imagenes/notAllHeroes.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
