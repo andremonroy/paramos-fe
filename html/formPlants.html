@@ -38,7 +38,7 @@
     <main class="main">
         <section class="form-section">
             <h2>Formulario de Siembra</h2>
-            <form action="#" method="POST">
+            <form action="#" id="plantsForm" method="POST">
                 <label for="tag">Tag:</label>
                 <input type="text" id="tag" name="tag" required>
 
@@ -52,9 +52,9 @@
                 <input type="text" id="vivero-id" name="vivero-id" required>
 
                 <label for="condiciones">Condiciones de Crecimiento Inicial:</label>
-                <textarea id="condiciones" name="condiciones" required></textarea>
+                <textarea id="condiciones-iniciales" name="condiciones" required></textarea>
 
-                <button type="submit">Enviar</button>
+                <button type="submit" id="botonEnviar">Enviar</button>
             </form>
         </section>
     </main>
@@ -73,5 +73,7 @@
     </footer>
 
     <script src="../javascript/scriptIndex.js"></script>
+    <script src="../src/plants/plants.js"></script>
+
 </body>
 </html>
