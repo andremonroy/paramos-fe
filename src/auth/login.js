@@ -26,8 +26,8 @@ window.onload = (event) => {
             const data = await response.json(); //Me trae el token
             console.log(data);
             const encodeData = btoa(JSON.stringify(data));
-            console.log(encodeData);
-            
+            localStorage.setItem("token",data.accessToken); 
+
             /*if (response.ok) {
                 loginMessage.textContent = 'Login Exitoso';
                 loginMessage.style.color = 'green'
@@ -48,7 +48,9 @@ window.onload = (event) => {
                 
                     // Redirigir a Formulario plantas después de mostrar el mensaje
                     setTimeout(() => {
-                        window.location.href = `./formPlants2.html#${encodeData}`;
+                       // window.location.href = `./formPlants2.html#${encodeData}`;
+                        window.location.href = `./formPlants2.html`;
+
                     }, 1000); // 1 segundo de retraso antes de la redirección
                 } else {
                     loginMessage.textContent = 'Usuario o contraseña incorrectos. Verifica e intenta de nuevo.';
