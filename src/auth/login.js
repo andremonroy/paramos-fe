@@ -39,9 +39,9 @@ window.onload = (event) => {
                 if (response.ok) {
                     loginMessage.textContent = 'Login exitoso. Redirigiendo...';
                     loginMessage.style.color = '#4d6656'; // Verde sutil
-                    loginMessage.style.backgroundColor = '#e5f5e0'; // Verde claro
+                    //loginMessage.style.backgroundColor = '#e5f5e0'; // Verde claro
                     loginMessage.style.padding = '10px';
-                    loginMessage.style.borderRadius = '5px';
+                    loginMessage.style.borderRadius = '0px';
                     loginMessage.style.marginTop = '20px';
                     loginMessage.style.fontSize = '0.9rem';
                     loginMessage.style.textAlign = 'center';
@@ -51,7 +51,7 @@ window.onload = (event) => {
                        // window.location.href = `./formPlants2.html#${encodeData}`;
                         window.location.href = `./formPlants2.html`;
 
-                    }, 1000); // 1 segundo de retraso antes de la redirección
+                    }, 500); // 0.5 segundo de retraso antes de la redirección
                 } else {
                     loginMessage.textContent = 'Usuario o contraseña incorrectos. Verifica e intenta de nuevo.';
                     loginMessage.style.color = '#6b7b6e'; // Gris-verdoso

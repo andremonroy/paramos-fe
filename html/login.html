@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+}<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -13,14 +13,13 @@
     <title>Login</title>
 </head>
 <body>
-    <!--
+    <!-- Barra de menú -->
     <header class="header">
         <div class="header__logo">
             <a href="../html/index.html">
-                <img class="header__logo--img" src="../imagenes/TerraverdeLogo2.png" alt="descripcion">
+                <img class="header__logo--img" src="../imagenes/TerraverdeLogo2.png" alt="logo">
             </a>
         </div>
-
         <div class="header__menu">
             <button class="abrir__menu" id="abrir">
                 <i class="bi bi-list"></i>
@@ -29,7 +28,6 @@
                 <button class="cerrar__menu" id="cerrar">
                     <i class="bi bi-x"></i>
                 </button>
-
                 <ul class="menu__list nav-list">
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Inicio</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/login.html">Login</a></li>
@@ -37,9 +35,10 @@
             </nav>
         </div>
     </header>
--->
-    <div class="login-container">
-        <div class="login-box">
+
+    <!-- Contenido principal -->
+    <main class="main">
+        <section class="form-section login-box">
             <h2>Iniciar Sesión</h2>
             <form action="/login" method="post" id="loginForm">
                 <div class="input-group">
@@ -56,13 +55,11 @@
                 <p class="forgot-password"><a href="#">¿Olvidaste tu contraseña?</a></p>
                 <p class="signup">¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
             </form>
+            <div id="loginMessage"></div>
+        </section>
+    </main>
 
-            <div id="loginMessage"> 
-            </div>
-        </div>
-    </div>
-
-    <!--
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__social">
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -75,8 +72,6 @@
             <p><a href="../html/privacy.html">Política de Privacidad</a> | <a href="../html/terms.html">Términos de Uso</a></p>
         </div>
     </footer>
-
-    -->
 
     <script src="../javascript/scriptIndex.js"></script>
 </body>
