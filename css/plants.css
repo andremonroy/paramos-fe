@@ -109,3 +109,13 @@ button:hover {
     background-position: center;
     height: 100%;
 }
+
+/* Boton de pop up con sweet alert*/
+.swal2-confirm {
+    width: auto; /* Ajusta el ancho automáticamente para evitar que se corte */
+    padding: 12px 24px; /* Asegura que el botón tenga suficiente espacio */
+}
+
+.swal2-confirm:hover {
+    filter: brightness(0.9); /* Oscurece ligeramente el color morado al pasar el mouse */
+}

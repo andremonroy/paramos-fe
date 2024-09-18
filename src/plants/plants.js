@@ -25,7 +25,6 @@
         })
     })
 });
-
 */
 document.getElementById("plantsForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -44,9 +43,11 @@ document.getElementById("plantsForm").addEventListener("submit", function(event)
         },
         body: JSON.stringify({ tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales })
     })
-    .then(response => {
+    .then(async response => {
         if (!response.ok) {
-            throw new Error("Error en la creación de la planta");
+            // Extraer el mensaje de error del cuerpo de la respuesta
+            const errorData = await response.json();
+            throw new Error(errorData.message || "Error desconocido");
         }
         return response.json();
     })
@@ -64,7 +65,7 @@ document.getElementById("plantsForm").addEventListener("submit", function(event)
             icon: "error",
             title: "Oops...",
             text: "Algo salió mal al crear la planta",
-            footer: '<a href="#">¿Por qué tengo este problema?</a>'
+            footer: `<a href="#">${error.message}</a>` // Mostrar el mensaje de error en el footer
         });
     });
 });
