@@ -43,6 +43,7 @@ document.getElementById("plantsForm").addEventListener("submit", function(event)
     });
 });
 
+
 //Obtener info de los viveros como menu desplegable
 document.addEventListener("DOMContentLoaded", function() {
     const viveroSelect = document.getElementById("vivero-id");

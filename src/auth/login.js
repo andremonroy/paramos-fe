@@ -49,7 +49,7 @@ window.onload = (event) => {
                     // Redirigir a Formulario plantas después de mostrar el mensaje
                     setTimeout(() => {
                        // window.location.href = `./formPlants2.html#${encodeData}`;
-                        window.location.href = `./formPlants2.html`;
+                        window.location.href = `./dashboard2.html`;
 
                     }, 500); // 0.5 segundo de retraso antes de la redirección
                 } else {

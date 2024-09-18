@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/dashboard2.css">
     <link rel="shortcut icon" href="../favicon_io/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../css/plants.css">
     <script defer src="../javascript/hamburgerMenu.js"></script>
+    <script defer src="../src/plants/dashboard2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>Form plantas</title>
+    <title>Dashboard Viveros</title>
 </head>
 <body>
+    <!-- Barra de menú -->
     <header class="header">
         <div class="header__logo">
             <a href="../html/index.html">
-                <img class="header__logo--img" src="../imagenes/TerraverdeLogo2.png" alt="descripcion">
+                <img class="header__logo--img" src="../imagenes/TerraverdeLogo2.png" alt="logo">
             </a>
         </div>
-
         <div class="header__menu">
             <button class="abrir__menu" id="abrir">
                 <i class="bi bi-list"></i>
@@ -31,34 +32,46 @@
                 </button>
                 <ul class="menu__list nav-list">
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Inicio</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/login.html">Login</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Ingresar plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboard2.html">Dashboard</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Plantas</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>
                 </ul>
             </nav>
-        </div>       
+        </div>
     </header>
 
+    <!-- Contenido principal del Dashboard -->
     <main class="main">
-        <section class="form-section">
-            <h2>Datos de la planta</h2>
-            <form action="#" id="plantsForm" method="POST">
-                <input type="text" id="tag" name="tag" placeholder="Tag de la planta" required>
-                <input type="text" id="especie" name="especie" placeholder="Especie de la planta" required>
-                <input type="date" id="fecha-germinacion" name="fecha-germinacion" placeholder="Fecha de germinación" required>
-                <!-- <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required> -->
-                <select id="vivero-id" name="vivero-id" required>
-                <option value="" disabled selected>Selecciona un vivero</option>
-                <!-- Aquí se agregarán las opciones de los viveros dinámicamente -->
-            </select>
-            
-            <textarea id="condiciones-iniciales" name="condiciones" placeholder="Condiciones de Crecimiento Inicial" required></textarea>
+        <section class="dashboard-section">
+            <br>
+            <button type="submit" id="createPlant">Ingresar nueva Planta</button>
 
-                <button type="submit" id="botonEnviar">Enviar</button>
-            </form>
+            <!-- Tabla de Plantas -->
+            <div class="plants-table-container">
+                <h3>Plantas Registradas en el Vivero</h3>
+                <table id="plants-table">
+                    <thead>
+                        <tr>
+                            <th>ID Planta</th>
+                            <th>Tag</th>
+                            <th>Especie</th>
+                            <th>Fecha de Germinación</th>
+                            <th>ID vivero</th>
+                            <th>Condiciones iniciales</th>
+                            <th>Modificar</th>
+                            <th>Eliminar</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="plantsTBody">
+                        <!-- Datos de plantas serán cargados dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer__social">
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -67,13 +80,17 @@
             <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="footer__info">
-            <p>&copy; 2024 TalentoTech. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Terraverde. Todos los derechos reservados.</p>
             <p><a href="../html/privacy.html">Política de Privacidad</a> | <a href="../html/terms.html">Términos de Uso</a></p>
         </div>
     </footer>
 
-    <script src="../javascript/scriptIndex.js"></script>
-    <script src="../src/plants/plants.js"></script>
+    <!-- Cargar el mapa de Google Maps 
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
 
+    <script src="../javascript/scriptIndex.js"></script>
+    <script src="../src/plants/dashboard2.js"></script>-->
 </body>
 </html>
