@@ -69,11 +69,19 @@ async function loadPlants() {
 
             
 
-            const deleteButton = document.createElement('button');
+            /*const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Eliminar';
+            deleteButton.className = 'delete_button';
+            deleteButton.onclick = () => deletePlant(plant.id);*/
+            
+            // Botón de eliminar con ícono de caneca
+            const deleteButton = document.createElement('button');
             deleteButton.className = 'delete_button';
             deleteButton.onclick = () => deletePlant(plant.id);
 
+            const trashIcon = document.createElement('i');
+            trashIcon.className = 'fas fa-trash'; // Font Awesome classes
+            deleteButton.appendChild(trashIcon);
 
             
 

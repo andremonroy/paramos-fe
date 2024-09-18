@@ -30,3 +30,42 @@ table, th, td {
 th {
     background-color: #f2f2f2;
 }
+
+/*Estilos para los botones modificar y eliminar del dashboard*/
+/* Centrar y estilizar los botones */
+.action-cell {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* Estilos generales para los botones */
+.modify_button, .delete_button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em; /* Ajustar el tamaño del ícono */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+/* Estilo específico para el botón de modificar */
+.modify_button i {
+    color: #3a5a40ff; /* Color acorde con tu paleta, ej: Hunter Green */
+}
+
+/* Estilo específico para el botón de eliminar */
+.delete_button i {
+    color: #de4444; /* Color rojo para indicar eliminación */
+}
+
+/* Estilos de hover */
+.modify_button:hover i {
+    color: #588157ff; /* Color de hover, ej: Fern Green */
+}
+
+.delete_button:hover i {
+    color: #ff6b6b; /* Color de hover para el botón de eliminar */
+}
