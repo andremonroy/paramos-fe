@@ -46,8 +46,13 @@
                 <input type="text" id="tag" name="tag" placeholder="Tag de la planta" required>
                 <input type="text" id="especie" name="especie" placeholder="Especie de la planta" required>
                 <input type="date" id="fecha-germinacion" name="fecha-germinacion" placeholder="Fecha de germinación" required>
-                <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required>
-                <textarea id="condiciones-iniciales" name="condiciones" placeholder="Condiciones de Crecimiento Inicial" required></textarea>
+                <!-- <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required> -->
+                <select id="vivero-id" name="vivero-id" required>
+                <option value="" disabled selected>Selecciona un vivero</option>
+                <!-- Aquí se agregarán las opciones de los viveros dinámicamente -->
+            </select>
+        
+            <textarea id="condiciones-iniciales" name="condiciones" placeholder="Condiciones de Crecimiento Inicial" required></textarea>
 
                 <button type="submit" id="botonEnviar">Enviar</button>
             </form>
