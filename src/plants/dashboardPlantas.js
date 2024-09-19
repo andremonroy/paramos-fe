@@ -35,6 +35,8 @@ async function loadPlants() {
         }
 
         const plants = await response.json();
+        // Ordenar las plantas por ID
+        plants.sort((a, b) => a.id - b.id);
 
         const tableBody = document.getElementById('plantsTBody');
         tableBody.innerHTML = '';

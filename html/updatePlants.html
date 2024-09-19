@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/plants.css">
     <script defer src="../javascript/hamburgerMenu.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="../src/plants/updatePlants.js"></script>
+
+
 
     <title>Form plantas</title>
 </head>
@@ -30,7 +33,7 @@
                     <i class="bi bi-x"></i>
                 </button>
                 <ul class="menu__list nav-list">
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboard2.html">Dashboard</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboardPlantas.html">Dashboard</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Nuevas Plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud Plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Cerrar sesión</a></li>
@@ -45,15 +48,9 @@
             <form action="#" id="updatePlantsForm" method="POST">
                 <input type="text" id="tag" name="tag" placeholder="Tag de la planta" required>
                 <input type="text" id="especie" name="especie" placeholder="Especie de la planta" required>
-                <input type="date" id="fecha-germinacion" name="fecha-germinacion" placeholder="Fecha de germinación" required>
+                <input id="fecha-germinacion" name="fecha-germinacion" placeholder="Fecha de germinación" required>
                 <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required>
-                <!--<select id="vivero-id" name="vivero-id" required>
-                <option value="" disabled selected>Selecciona un vivero</option> -->
-                <!-- Aquí se agregarán las opciones de los viveros dinámicamente -->
-            </select>
-            
-            <textarea id="condiciones-iniciales" name="condiciones" placeholder="Condiciones de Crecimiento Inicial" required></textarea>
-
+                <textarea id="condiciones-iniciales" name="condiciones" placeholder="Condiciones de Crecimiento Inicial" required></textarea>
                 <button type="submit" id="botonEnviar">Enviar</button>
             </form>
         </section>
@@ -63,7 +60,7 @@
         <div class="footer__social">
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/terraverde_project/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <div class="footer__info">
@@ -74,6 +71,7 @@
 
     <script src="../javascript/scriptIndex.js"></script>
     <script src="../src/plants/plants.js"></script>
+
 
 </body>
 </html>

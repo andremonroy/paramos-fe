@@ -1,25 +1,39 @@
-window.onload = async (event) => {
+document.addEventListener('DOMContentLoaded', async (event) => {
     const idPlant = getQueryParams('id');
     const plant = await loadPlant(idPlant);
-    const tag = document.getElementById("tag").value;
-    const especie = document.getElementById("especie").value;
-    const fecha_germinacion = document.getElementById("fecha-germinacion").value;
-    const vivero_id = document.getElementById("vivero-id").value;
-    const condiciones_iniciales = document.getElementById("condiciones-iniciales").value;
-    const token = localStorage.getItem("token");
 
-    idPlant = plant.id;
-    tag = plant.tag;
-    especie = plant.especie;
-    fecha_germinacion = plant.fecha_germinacion;
-    vivero_id = plant.vivero_id;
-    condiciones_iniciales = plant.condiciones_iniciales;
+    if (!plant) {
+        console.error('Planta no encontrada');
+        return;
+    }
 
-    updatePlant.addEventListener('submit', async function (event) {
-        event.preventDefault();
-        await updatePlant(idPlant, tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales);
-    });
-};
+    // Asigna los valores a los campos del formulario
+    document.getElementById("tag").value = plant.tag;
+    document.getElementById("especie").value = plant.especie;
+    document.getElementById("fecha-germinacion").value = plant.fecha_germinacion;
+    document.getElementById("vivero-id").value = plant.vivero_id;
+    document.getElementById("condiciones-iniciales").value = plant.condiciones_iniciales;
+
+    const updatePlantForm = document.getElementById('updatePlantsForm');
+    
+    if (updatePlantForm) {
+        updatePlantForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            // Obtén los valores actuales del formulario
+            const tag = document.getElementById("tag").value;
+            const especie = document.getElementById("especie").value;
+            const fecha_germinacion = document.getElementById("fecha-germinacion").value;
+            const vivero_id = document.getElementById("vivero-id").value;
+            const condiciones_iniciales = document.getElementById("condiciones-iniciales").value;
+
+            await updatePlant(idPlant, tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales);
+        });
+    } else {
+        console.error('Formulario no encontrado');
+    }
+});
+
 
 function getQueryParams(param) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -34,13 +48,12 @@ async function loadPlant(id) {
                 'Content-Type': 'application/json'
             },
         });
-        const categories = await response.json();
-        return categories[0];
+        const plants = await response.json();
+        return plants[0]; // Retorna la planta
     } catch (error) {
         console.error(error);
     }
-};
-
+}
 
 async function updatePlant(id, tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales) {
     try {
@@ -49,16 +62,15 @@ async function updatePlant(id, tag, especie, fecha_germinacion, vivero_id, condi
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales}),
+            body: JSON.stringify({ tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales }),
         });
-        const data = await response.json();
-            if (response.ok) {
-                window.alert('Planta Actualizada Exitosamente.'); 
-            } else {
-                window.alert('Planta No Fue Actualizada.');
-            }
+        if (response.ok) {
+            window.alert('Planta Actualizada Exitosamente.');
+        } else {
+            window.alert('Planta No Fue Actualizada.');
+        }
     } catch (error) {
         console.error(error);
         window.alert('Tenemos problemas técnicos.');
     }
-};
+}
