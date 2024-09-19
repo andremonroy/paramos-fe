@@ -32,7 +32,7 @@
                 <ul class="menu__list nav-list">
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboard2.html">Dashboard</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Nuevas Plantas</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud Plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Cerrar sesión</a></li>
                 </ul>
             </nav>
@@ -41,14 +41,14 @@
 
     <main class="main">
         <section class="form-section">
-            <h2>Datos de la planta</h2>
-            <form action="#" id="plantsForm" method="POST">
+            <h2>Actualiza los datos de la planta</h2>
+            <form action="#" id="updatePlantsForm" method="POST">
                 <input type="text" id="tag" name="tag" placeholder="Tag de la planta" required>
                 <input type="text" id="especie" name="especie" placeholder="Especie de la planta" required>
                 <input type="date" id="fecha-germinacion" name="fecha-germinacion" placeholder="Fecha de germinación" required>
-                <!-- <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required> -->
-                <select id="vivero-id" name="vivero-id" required>
-                <option value="" disabled selected>Selecciona un vivero</option>
+                <input type="text" id="vivero-id" name="vivero-id" placeholder="ID del vivero" required>
+                <!--<select id="vivero-id" name="vivero-id" required>
+                <option value="" disabled selected>Selecciona un vivero</option> -->
                 <!-- Aquí se agregarán las opciones de los viveros dinámicamente -->
             </select>
             

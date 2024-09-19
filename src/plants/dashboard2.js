@@ -1,6 +1,5 @@
 // Trae la info de la tabla "plants" de la BD y la muestra en una tabla
 window.onload = (event) => {
-    // Asegúrate de que el token esté presente antes de hacer cualquier solicitud
     const token = localStorage.getItem("token");
     if (!token) {
         console.error("Token de autenticación no encontrado. Inicia sesión primero.");
@@ -61,32 +60,36 @@ async function loadPlants() {
             const initConditionsCell = document.createElement('td');
             initConditionsCell.textContent = plant.condiciones_iniciales;
 
-            const actionCell = document.createElement('td');
-
-            /*const modifyButton = document.createElement('button');
-            modifyButton.textContent = 'Modificar';
-            modifyButton.className = 'modify_button';*/
-
+            const actionCell1 = document.createElement('td');
+            const actionCell2 = document.createElement('td');
             
 
-            /*const deleteButton = document.createElement('button');
+            /* Boton eliminar con texto "Eliminar"
+            const deleteButton = document.createElement('button');
             deleteButton.textContent = 'Eliminar';
             deleteButton.className = 'delete_button';
             deleteButton.onclick = () => deletePlant(plant.id);*/
+
             
+
+             // Botón de modificar con ícono de tuerca
+            const modifyButton = document.createElement('button');
+            modifyButton.className = 'modify_button';
+            modifyButton.onclick = () => modifyPlants(plant.id);
+            const cogIcon = document.createElement('i');
+            cogIcon.className = 'fas fa-cog'; // Font Awesome classes
+            modifyButton.appendChild(cogIcon);
+
             // Botón de eliminar con ícono de caneca
             const deleteButton = document.createElement('button');
             deleteButton.className = 'delete_button';
             deleteButton.onclick = () => deletePlant(plant.id);
-
             const trashIcon = document.createElement('i');
             trashIcon.className = 'fas fa-trash'; // Font Awesome classes
             deleteButton.appendChild(trashIcon);
 
-            
-
-            //actionCell.appendChild(modifyButton);
-            actionCell.appendChild(deleteButton);
+            actionCell1.appendChild(modifyButton);
+            actionCell2.appendChild(deleteButton);
 
             row.appendChild(idPlantCell);
             row.appendChild(tagCell);
@@ -94,9 +97,9 @@ async function loadPlants() {
             row.appendChild(fechagerminacionCell);
             row.appendChild(idViveroCell);
             row.appendChild(initConditionsCell);
-
-
-            row.appendChild(actionCell);
+        
+            row.appendChild(actionCell1);
+            row.appendChild(actionCell2);
 
             tableBody.appendChild(row);
         });
@@ -153,5 +156,5 @@ async function deletePlant(id) {
 }
 
 function modifyPlants (id) {
-    window.location.href = `updateCategories.html?id=${id}`;
+    window.location.href = `updatePlants.html?id=${id}`;
 }
