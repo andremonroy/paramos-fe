@@ -43,14 +43,15 @@
         }
     }*/
 
-    
-    // Función  de getParamos V2
+    // PARAMOS
+
+    // Función  de Paramos V2
     async function getParamos() {
         const token = localStorage.getItem("token");
-        const paramoSelect = document.getElementById("paramo-id"); // ID correcto
+        const paramoSelect = document.getElementById("paramo-id");
 
         paramoSelect.innerHTML = '<option value="" selected disabled>Selecciona un paramo</option>';
-
+        console.log("Dentro")
         try {
             const response = await fetch("http://localhost:3000/getParamos", {
                 method: "GET",
@@ -61,29 +62,31 @@
             });
             const paramos = await response.json();
 
+            // Traer los nombres que tengo en la BD para mostrarlos en el menu desplegable
             const allParamos = document.createElement("option");
             allParamos.value = "0";
             allParamos.textContent = "Todos";
             paramoSelect.appendChild(allParamos);
 
-            paramos.forEach(vivero => {
+            paramos.forEach(paramo => {
                 const option = document.createElement("option");
-                option.value = vivero.id;
-                option.textContent = vivero.nombre;
+                option.value = paramo.id;
+                option.textContent = paramo.complejo_nombre;    //Nombre de la columna que quiera traer de la BD para mostrar en el menu desplegable
                 paramoSelect.appendChild(option);
             });
 
             paramoSelect.addEventListener("change", async (event) => {
-                const selectedViveroId = event.target.value;
-                await loadPlants(selectedViveroId); // Cargar plantas cuando se selecciona un vivero
+                const selectedParamoId = event.target.value;
+                //await loadPlants(selectedParamoId); // Cargar plantas cuando se selecciona un paramo
             });
 
         } catch (error) {
             console.error("Error al cargar los viveros:", error);
         }
     }
-    
-    // Función original de getViveros para mantener el funcionamiento del menú
+
+    // VIVEROS Y PLANTAS CON FILTRO DE VIVERO
+    // Función getViveros funcionando OK
     async function getViveros() {
         const token = localStorage.getItem("token");
         const viveroSelect = document.getElementById("vivero-id"); 
@@ -114,7 +117,7 @@
 
             viveroSelect.addEventListener("change", async (event) => {
                 const selectedViveroId = event.target.value;
-                await loadPlants(selectedViveroId); // Cargar plantas cuando se selecciona un vivero
+                //await loadPlants(selectedViveroId); // Cargar plantas cuando se selecciona un vivero
             });
 
         } catch (error) {
@@ -156,9 +159,10 @@
     // Inicializar la carga de datos al cargar la página
     document.addEventListener("DOMContentLoaded", () => {
         initMap();
-        //loadParamos();
+        getParamos();
         getViveros(); // Cargar viveros de la manera original
 
+        // Crea la tabla plantas con las filas del filtro de Vivero
         const viveroSelect = document.getElementById("vivero-id"); 
         viveroSelect.addEventListener("change", async (event) => {
             event.preventDefault();

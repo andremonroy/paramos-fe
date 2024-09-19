@@ -41,6 +41,7 @@ function getQueryParams(param) {
 };
 
 async function loadPlant(id) {
+    
     try {
         const response = await fetch(`http://localhost:3000/plants/${id}`, {
             method: 'GET',
