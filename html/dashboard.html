@@ -29,10 +29,11 @@
                     <i class="bi bi-x"></i>
                 </button>
                 <ul class="menu__list nav-list">
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Inicio</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/login.html">Login</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Ingresar plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboard.html">Dashboard</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboardPlantas.html">Tabla plantas</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Ingresar Plantas</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -46,16 +47,10 @@
             <!-- Menú desplegable para seleccionar Páramo -->
             <div class="select-container">
                 <label for="paramo-select">Páramo:</label>
-                <select id="paramo-select" name="paramo">
+                <select id="paramo-id" name="paramo">
                     <option value="" selected disabled>Seleccione un páramo</option>
                     <!-- Opciones de páramo serán cargadas dinámicamente -->
                 </select>
-            </div>
-
-            <!-- Mapa de Google Maps -->
-            <div class="map-container">
-                <h3>Ubicación del Páramo</h3>
-                <div id="map"></div>
             </div>
 
             <!-- Menú desplegable para seleccionar Vivero -->
@@ -73,25 +68,41 @@
                 </select>
             </div>
 
+            <!-- Mapa de Google Maps -->
+            <div class="map-container">
+                <h3>Ubicación del Páramo</h3>
+                <div id="map"></div>
+            </div>
+
+            <button class="button" type="submit" id="botonEnviar">Ver plantas del vivero</button> 
+
+
+
+
             <!-- Tabla de Plantas -->
             <div class="plants-table-container">
                 <h3>Plantas Registradas en el Vivero</h3>
                 <table id="plants-table">
                     <thead>
                         <tr>
+                            <th>ID Planta</th>
                             <th>Tag</th>
                             <th>Especie</th>
                             <th>Fecha de Germinación</th>
-                            <th>Condiciones Iniciales</th>
+                            <th>ID vivero</th>
+                            <th>Condiciones iniciales</th>
+                            <th>Modificar</th>
+                            <th>Borrar</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- Datos de plantas serán cargados dinámicamente -->
+                    <tbody id="plantsTBody">
+                        Datos de plantas serán cargados dinámicamente
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
+    <br>
 
     <!-- Footer -->
     <footer class="footer">
@@ -108,7 +119,7 @@
 
     <!-- Cargar el mapa de Google Maps -->
     <script async
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPSXNtidmRr5AU4vG9sKhBW8tTJMKnbuU&callback=initMap">
     </script>
 </body>
 </html>

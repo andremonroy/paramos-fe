@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script defer src="../javascript/hamburgerMenu.js"></script>
     <script defer src="../src/plants/dashboardPlantas.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <title>Dashboard Viveros</title>
@@ -30,11 +31,12 @@
                 <button class="cerrar__menu" id="cerrar">
                     <i class="bi bi-x"></i>
                 </button>
-                <ul class="menu__list nav-list">
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboardPlantas.html">Dashboard</a></li>
+                <ul class="menu__list nav-list">    
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboard.html">Dashboard general</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboardPlantas.html">Plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Nuevas Plantas</a></li>
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Cerrar sesión</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="#" id="logOut">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -91,5 +93,14 @@
 
     <script src="../javascript/scriptIndex.js"></script>
     <script src="../src/plants/dashboard2.js"></script>-->
+    <script>
+            const botonCerrar = document.getElementById('logOut');
+    botonCerrar.addEventListener('click',function(event){
+        localStorage.removeItem("token");
+        window.location.href = './index.html';
+    });
+
+    </script>
+
 </body>
 </html>

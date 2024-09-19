@@ -8,7 +8,7 @@
 
 #map {
     height: 400px;
-    width: 100%;
+    width: 70vw;
     background-color: #eaeaea;
 }
 
@@ -29,4 +29,25 @@ table, th, td {
 
 th {
     background-color: #f2f2f2;
+}
+
+
+/*Estilos del boton*/
+button {
+    padding: 12px;
+    background-color: var(--avocado);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; 
+    width: 50%; 
+    display: block;
+    text-align: center;
+}
+
+button:hover {
+    background-color: var(--fern-green);
 }

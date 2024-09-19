@@ -11,7 +11,7 @@ window.onload = (event) => {
         console.log('Hice click');
         window.location.href = './formPlants2.html';
     });
-
+    
     // Llamar a la función para cargar las plantas
     loadPlants();
 };
@@ -71,8 +71,6 @@ async function loadPlants() {
             deleteButton.textContent = 'Eliminar';
             deleteButton.className = 'delete_button';
             deleteButton.onclick = () => deletePlant(plant.id);*/
-
-            
 
              // Botón de modificar con ícono de tuerca
             const modifyButton = document.createElement('button');
