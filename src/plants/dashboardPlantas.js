@@ -12,7 +12,7 @@ window.onload = (event) => {
     const createCategories = document.getElementById('createPlant');
     createCategories.addEventListener('click', function(event) {
         console.log('Hice click');
-        window.location.href = './formPlants2.html';
+        window.location.href = './formplants2.html';
     });
     
     // Llamar a la función para cargar las plantas
