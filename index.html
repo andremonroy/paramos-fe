@@ -1,12 +1,133 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!--<link rel="shortcut icon" href="../favicon_io/android-chrome-512x512.png" type="image/x-icon">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="javascript/hamburgerMenu.js"></script>
+    <title>Inicio</title>
+
 </head>
 <body>
-    Hola
-    
+    <header class="header">
+        <div class="header__logo">
+            <a href="index.html">
+                <img class="header__logo--img" src="imagenes/TerraverdeLogo2.png" alt="descripcion">
+            </a>
+        </div>
+
+        <div class="header__menu ">
+            <button class="abrir__menu" id="abrir">
+                <i class="bi bi-list"></i>
+            </button>
+            <nav class="menu nav" id="nav">
+                <button class="cerrar__menu" id="cerrar">
+                    <i class="bi bi-x"></i>
+                </button>
+
+                <ul class="menu__list nav-list">
+                    <!-- <li class="menu__list--item"><a class="menu__list--link" href="html/index.html">Inicio</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="html/powerBIDashboard.html">Dashboard</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="html/formplants2.html">Plantas</a></li>-->
+                    <li class="menu__list--item"><a class="menu__list--link" href="html/register.html">Registro</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="html/login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>       
+    </header>
+
+    <main class="main">
+        <div class="main__banner2">
+
+            <section class="main__banner2--imagesAndButtons">
+                <div class="main__banner2--atras">
+                    <img id="atras" src="imagenes/banner/atras.svg" alt="atras" loading="lazy">
+                </div>
+                <div class="main__banner2--container">
+                    <div id="bannerImg" class="main__banner2--images">
+                        <!--<img class="main__banner2--carPhoto" src="imagenes/banner/paramo3.jpg" alt="imagen 1" loading="lazy">-->
+                        <img class="main__banner2--carPhoto" src="https://laud.udistrital.edu.co/sites/default/files/imagen-noticia/2022-03/FOTO%20LAUD%20PARAMO.jpg" alt="imagen 1" loading="lazy">
+                
+                    </div>
+                    <div id="bannerText" class="main__banner2--text">
+                        <h3>Innovación para la conservación</h3>
+                        <p> Los páramos en Colombia proveen el 70% de agua dulce para ciudades y comunidades, pero la deforestación y el sobrepastoreo amenazan su capacidad de retención de agua y su rica biodiversidad, con un 86% de especies de plantas endémicas. Las iniciativas actuales no son suficientes para asegurar su sostenibilidad a largo plazo.</p>
+                        <!--<p>Las iniciativas actuales no son suficientes para asegurar la sostenibilidad a largo plazo de nuestros páramos. Con nuestro enfoque innovador, buscamos transformar la manera en que protegemos estos ecosistemas vitales, garantizando su salud y resiliencia para las generaciones futuras.</p>
+                        <p> Buscamos cultivanr más de 5.000 frailejones desde semillas en viveros, usando tecnología IoT y modelos predictivos para monitorear su crecimiento. Con trazabilidad individual de cada planta, nos preparamos para reforestar nuestros ecosistemas y devolverles vida! </p>-->
+                    </div>
+                </div>
+            
+                <div class="main__banner2--adelante">
+                    <img id="adelante" src="imagenes/banner/adelante.svg" alt="adelante" loading="lazy">
+                </div>
+            </section>
+
+            <section class="main__banner2--puntos">
+                <div class="puntos" id="puntos"></div>
+            </section>
+        </div>
+
+        <section class="main__titulo">
+            <p>Los páramos en Colombia proveen el 70% de agua dulce para ciudades y comunidades, pero la deforestación y el sobrepastoreo amenazan su capacidad de retención de agua y su rica biodiversidad, con un 86% de especies de plantas endémicas. Las iniciativas actuales no son suficientes para asegurar su sostenibilidad a largo plazo.</p>
+            <!--<p class=" main__titulo--texto flex-container">En Colombia, los páramos son vitales para nuestro suministro de agua, cubriendo el 70% de nuestras necesidades urbanas. Pero enfrentan serios desafíos debido a la deforestación y el sobrepastoreo, poniendo en riesgo su capacidad de retención de agua y su rica biodiversidad. Hoy, tenemos la oportunidad de cambiar esto. Con nuestras acciones, no solo preservaremos estos ecosistemas únicos, sino que también garantizaremos un futuro sostenible y próspero para todos. ¡Unámonos para proteger y restaurar nuestros páramos para las generaciones futuras!</p> -->
+            <p class=" main__titulo--texto flex-container">Los páramos en Colombia proveen el 70% de agua dulce para ciudades y comunidades, pero la deforestación y el sobrepastoreo amenazan su capacidad de retención de agua y su rica biodiversidad, con un 86% de especies de plantas endémicas. Las iniciativas actuales no son suficientes para asegurar su sostenibilidad a largo plazo.</p>
+            <!--<h2 class="main__titulo--texto flex-container">titulo</h2>-->
+            <br><br>
+        </section>
+
+        <!--
+        <div class="main__galeria flex-container">
+            <img class="main__galeria--photo" src="imagenes/Audi 2.jpg" alt="car Audi">
+            <img class="main__galeria--photo" src="imagenes/Audi.jpg" alt="car Audi">
+            <a class="main__galeria--link" href="html/detailcar.html">
+                <img class="main__galeria--photo" src="imagenes/opel.jpg" alt="car opel">
+            </a>
+            <img class="main__galeria--photo" src="imagenes/bmw 1.jpg" alt="car bmw">
+            <img class="main__galeria--photo" src="imagenes/bmw 2.jpg" alt="car bmw">
+            <img class="main__galeria--photo" src="imagenes/bmw.jpg" alt="car bmw">
+            <img class="main__galeria--photo" src="imagenes/bmw3.jpg" alt="car bmw">
+            <img class="main__galeria--photo" src="imagenes/mercedes 1.jpg" alt="car mercedes">
+            <img class="main__galeria--photo" src="imagenes/mercedes 2.jpg" alt="car mercedes">
+            <img class="main__galeria--photo" src="imagenes/mercedes.jpg" alt="car mercedes">
+            <img class="main__galeria--photo" src="imagenes/porsche 1.jpg" alt="car porsche">
+            <img class="main__galeria--photo" src="imagenes/porsche 2.jpg" alt="car porsche">
+            <img class="main__galeria--photo" src="imagenes/porsche.jpg" alt="car porsche">
+            <img class="main__galeria--photo" src="imagenes/volkswagen 1.jpg" alt="car volkswagen">
+            <img class="main__galeria--photo" src="imagenes/volkswagen 2.jpg" alt="car volkswagen">
+            <img class="main__galeria--photo" src="imagenes/volkswagen.jpg" alt="car volkswagen">
+        </div>
+        
+        <section class="main__titulo">Lorem ipsum dolor sit amet consectetur Titulo </h4></section>
+        
+        <div class="main__galeria main__brands flex-container">
+            <img class="main__brands--photo" src="imagenes/mercedes logo.png" alt="mercedes logo" height="100px">
+            <img class="main__brands--photo" src="imagenes/Audi logo.jpg" alt="audi logo" height="100px">
+            <img class="main__brands--photo" src="imagenes/bmw logo.jpg" alt="bmw logo" height="100px">
+            <img class="main__brands--photo" src="imagenes/opel logo.png" alt="opel logo" height="100px">
+            <img class="main__brands--photo" src="imagenes/porsche logo.jpg" alt="porsche logo" height="100px">
+            <img class="main__brands--photo" src="imagenes/volkswagen logo.jpg" alt="volkswagen logo" height="100px">
+        </div>
+
+        -->
+    </main>
+
+    <footer class="footer">
+        <div class="footer__social">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <!-- <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>-->
+            <a href="https://www.instagram.com/terraverde_project/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer__info">
+            <p>&copy; 2024 Terraverde. Todos los derechos reservados.</p>
+            <p><a href="html/privacy.html">Política de Privacidad</a> | <a href="html/terms.html">Términos de Uso</a></p>
+        </div>
+    </footer>
+
+    <script src="javascript/scriptIndex.js"></script>
 </body>
 </html>
