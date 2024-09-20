@@ -1,0 +1,39 @@
+{
+    "version": 2,
+    "builds": [
+    {
+        "src": "html/*",
+        "use": "@vercel/static"
+    },
+    {
+        "src": "css/*",
+        "use": "@vercel/static"
+    },
+    {
+        "src": "imagenes/*",
+        "use": "@vercel/static"
+    },
+    {
+        "src": "javascript/*",
+        "use": "@vercel/static"
+    },
+    {
+        "src": "src/*",
+        "use": "@vercel/static"
+    },
+    {
+        "src": "src/auth/*",
+        "use": "@vercel/static"
+    },
+    {
+        "src": "src/plants/*",
+        "use": "@vercel/static"
+    }
+    ],
+    "routes": [
+    {
+        "src": "/(.*)",
+        "dest": "/$1"
+    }
+    ]
+}
