@@ -201,7 +201,7 @@ body {
     color: var(--avocado);
 }
 
-/*---- GALERIA DE CARROS ----*/
+/*---- GALERIA DE IMAGENES ----*/
 .main__galeria{
     gap: 20px;
     justify-content: start;
@@ -335,5 +335,46 @@ body {
 
     .nav-list li a{
         color: #ececec;
+    }
+}
+
+/* Estilos parrafos de texto final*/
+section.main__titulo {
+    background-color: #f7fbf7; /* Fondo claro que evoca naturaleza */
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 1200px;
+    border-radius: 12px; /* Bordes redondeados para un toque moderno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-left: 6px solid #4a854b; /* Borde lateral verde para resaltar la sección */
+}
+
+.main__titulo--texto {
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna y legible */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2a3e1f; /* Verde oscuro para conectar con el tema ecológico */
+    margin-bottom: 20px;
+    text-align: justify; /* Alineación justificada para un aspecto ordenado */
+}
+
+.main__titulo--texto:first-child {
+    font-weight: 600; /* El primer párrafo destaca con negrita */
+    font-size: 1.3rem; /* Un poco más grande para captar atención */
+}
+
+.main__titulo--texto:last-child {
+    font-weight: 600;
+    font-size: 1.2rem; /* Último párrafo también un poco más destacado */
+}
+
+/* Estilo responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+    section.main__titulo {
+        padding: 20px;
+    }
+
+    .main__titulo--texto {
+        font-size: 1rem; /* Ajuste de tamaño en móviles */
     }
 }

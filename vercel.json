@@ -22,6 +22,10 @@
         "use": "@vercel/static"
     },
     {
+        "src": "imagenes/banner/*",
+        "use": "@vercel/static"
+    },
+    {
         "src": "javascript/*",
         "use": "@vercel/static"
     },
