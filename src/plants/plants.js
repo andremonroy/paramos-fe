@@ -1,3 +1,6 @@
+//Cambios por vercel
+const apiUrl = 'https://paramos-backend.vercel.app';
+
 // Ingresar los datos de una nueva planta
 document.getElementById("plantsForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -8,7 +11,8 @@ document.getElementById("plantsForm").addEventListener("submit", function(event)
     const condiciones_iniciales = document.getElementById("condiciones-iniciales").value;
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:3000/createPlants", {
+    //fetch("http://localhost:3000/createPlants", {
+    fetch(`${apiUrl}/createPlants`, {
         method: "post",
         headers: {
             'Content-Type': 'application/json',
@@ -57,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Hacer un fetch para obtener los viveros desde el backend, incluyendo el token en los headers
-    fetch("http://localhost:3000/getViveros", {
+    //fetch("http://localhost:3000/getViveros", {
+    fetch(`${apiUrl}/getViveros`, {
         method: "GET",
         headers: {
             'Content-Type': 'application/json',

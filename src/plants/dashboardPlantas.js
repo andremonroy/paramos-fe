@@ -1,3 +1,6 @@
+//Cambios por vercel
+const apiUrl = 'https://paramos-backend.vercel.app';
+
 // Trae la info de la tabla "plants" de la BD y la muestra en una tabla
 window.onload = (event) => {
     const token = localStorage.getItem("token");
@@ -20,7 +23,8 @@ window.onload = (event) => {
 async function loadPlants() {
     try {
         const token = localStorage.getItem("token"); // Obtener el token de localStorage
-        const response = await fetch('http://localhost:3000/plants', {
+        const response = await fetch(`${apiUrl}/plants`, {
+        //const response = await fetch('http://localhost:3000/plants', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -130,7 +134,8 @@ async function loadPlants() {
 async function deletePlant(id) {
     try {
         const token = localStorage.getItem("token"); // Obtener el token de localStorage
-        const response = await fetch(`http://localhost:3000/deletePlants/${id}`, {
+        //const response = await fetch(`http://localhost:3000/deletePlants/${id}`, {
+        const response = await fetch(`${apiUrl}/deletePlants/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

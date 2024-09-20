@@ -2,6 +2,9 @@ window.onload = (event) => {
     const registerForm = document.getElementById('registerForm');
     const registerMessage = document.getElementById('registerMessage');
     console.log("Registro cargado");
+    //Cambios por vercel
+    const apiUrl = 'https://paramos-backend.vercel.app';
+
 
     registerForm.addEventListener('submit', async function(event){
         event.preventDefault(); // Prevenir que se envie el formulario de manera tradicional.
@@ -11,7 +14,8 @@ window.onload = (event) => {
         const email = document.getElementById('email').value;
 
         try {
-            const response = await fetch('http://localhost:3000/user/register', {
+            const response = await fetch(`${apiUrl}/user/register`, {
+            //const response = await fetch('http://localhost:3000/user/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

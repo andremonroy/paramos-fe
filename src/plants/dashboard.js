@@ -2,6 +2,9 @@
     let map;
     let marcador;
 
+    //Cambios por vercel
+    const apiUrl = 'https://paramos-backend.vercel.app';
+
 
     function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
@@ -30,7 +33,8 @@
         paramoSelect.innerHTML = '<option value="" selected disabled>Selecciona un paramo</option>';
         console.log("Dentro")
         try {
-            const response = await fetch("http://localhost:3000/getParamos", {
+            const response = await fetch(`${apiUrl}/getParamos`, {
+            //const response = await fetch("http://localhost:3000/getParamos", {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -74,7 +78,8 @@
         viveroSelect.innerHTML = '<option value="" selected disabled>Selecciona un vivero</option>';
 
         try {
-            const response = await fetch("http://localhost:3000/getViveros", {
+            const response = await fetch(`${apiUrl}/getViveros`, {
+            //const response = await fetch("http://localhost:3000/getViveros", {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -109,7 +114,8 @@
     async function loadPlants(viveroId) {
         const token = localStorage.getItem("token");
         try {
-            const response = await fetch(`http://localhost:3000/plantsByVivero?viveroId=${viveroId}`, {
+            const response = await fetch(`${apiUrl}/plantsByVivero?viveroId=${viveroId}`, {
+            //const response = await fetch(`http://localhost:3000/plantsByVivero?viveroId=${viveroId}`, {
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
@@ -147,7 +153,8 @@
         viveroSelect.addEventListener("change", async (event) => {
             event.preventDefault();
             const valor = event.target.value;
-            const respuesta = await fetch(`http://localhost:3000/plantsbyVivero/${valor}`);
+            const respuesta = await fetch(`${apiUrl}/plantsbyVivero/${valor}`);
+            //const respuesta = await fetch(`http://localhost:3000/plantsbyVivero/${valor}`);
             const data = await respuesta.json();
             console.log(data)
             
@@ -224,7 +231,8 @@
 
             const token = localStorage.getItem("token");
             const valor = event.target.value; //codigo_objeto del Paramo
-            const respuesta = await fetch(`http://localhost:3000/getViverosByParamo/${valor}`,{
+            const respuesta = await fetch(`${apiUrl}/getViverosByParamo/${valor}`,{
+            //const respuesta = await fetch(`http://localhost:3000/getViverosByParamo/${valor}`,{
                 method: "GET",
                 headers: {
                     'Content-Type': 'application/json',
