@@ -30,10 +30,10 @@
                 </button>
                 <ul class="menu__list nav-list">
                     <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboard.html">Dashboard</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboardPlantas.html">Tabla plantas</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Ingresar Plantas</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>
-                    <li class="menu__list--item"><a class="menu__list--link" href="../html/index.html">Cerrar sesión</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/dashboardPlantas.html">Plantas</a></li>
+                    <!--<li class="menu__list--item"><a class="menu__list--link" href="../html/formplants2.html">Ingresar Plantas</a></li>
+                    <li class="menu__list--item"><a class="menu__list--link" href="../html/">Salud</a></li>-->
+                    <li class="menu__list--item"><a class="menu__list--link" href="#" id="logOut">Cerrar sesión</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +42,7 @@
     <!-- Contenido principal del Dashboard -->
     <main class="main">
         <section class="dashboard-section">
-            <h2>Seleccione un Páramo y Vivero</h2>
+            <h2>Listar Plantas por Páramo y Vivero</h2>
 
             <!-- Menú desplegable para seleccionar Páramo -->
             <div class="select-container">
@@ -74,11 +74,6 @@
                 <div id="map"></div>
             </div>
 
-            <button class="button" type="submit" id="botonEnviar">Ver plantas del vivero</button> 
-
-
-
-
             <!-- Tabla de Plantas -->
             <div class="plants-table-container">
                 <h3>Plantas Registradas en el Vivero</h3>
@@ -96,12 +91,17 @@
                         </tr>
                     </thead>
                     <tbody id="plantsTBody">
-                        Datos de plantas serán cargados dinámicamente
+                        <!--Datos de plantas serán cargados dinámicamente-->
                     </tbody>
                 </table>
             </div>
         </section>
     </main>
+    <br>
+
+    <a href="../html/dashboardPlantas.html">
+        <button class="buttonPlants">Ver todas las plantas</button>
+    </a>
     <br>
 
     <!-- Footer -->
@@ -120,6 +120,14 @@
     <!-- Cargar el mapa de Google Maps -->
     <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPSXNtidmRr5AU4vG9sKhBW8tTJMKnbuU&callback=initMap">
+    </script>
+    <script>
+        const botonCerrar = document.getElementById('logOut');
+    botonCerrar.addEventListener('click',function(event){
+        localStorage.removeItem("token");
+        window.location.href = './index.html';
+    });
+
     </script>
 </body>
 </html>

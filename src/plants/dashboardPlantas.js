@@ -64,7 +64,6 @@ async function loadPlants() {
 
             const actionCell1 = document.createElement('td');
             const actionCell2 = document.createElement('td');
-            
 
             /* Boton eliminar con texto "Eliminar"
             const deleteButton = document.createElement('button');
@@ -83,7 +82,20 @@ async function loadPlants() {
             // Botón de eliminar con ícono de caneca
             const deleteButton = document.createElement('button');
             deleteButton.className = 'delete_button';
-            deleteButton.onclick = () => deletePlant(plant.id);
+            deleteButton.onclick = () => {
+                Swal.fire({
+                    title: 'Mensaje confirmación',
+                    text:'Estas seguro que deseas eliminar la planta?',
+                    icon:'question',
+                    showCancelButton: true,
+                    confirmButtonText:'Si, lo deseo eliminar'
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        deletePlant(plant.id);
+                        
+                    }
+                });
+                }
             const trashIcon = document.createElement('i');
             trashIcon.className = 'fas fa-trash'; // Font Awesome classes
             deleteButton.appendChild(trashIcon);

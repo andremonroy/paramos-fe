@@ -1,50 +1,27 @@
    // Inicializa el mapa de Google Maps
     let map;
+    let marcador;
+
 
     function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
            //center: { lat: 4.60971, lng: -74.08175 }, // Centro inicial (Bogotá)
            center: { lat: 5.0667, lng: -74.1 }, //Paramo Guerrero
+           //center: { lat: 5.4172, lng: -73.5664 }, // Paramo Rabanal
+           //center: { lat: 4.5176, lng: -73.7500 }, // Paramo Chingaza
+
             zoom: 14,
         });
+        //Marcar cada vivero
+        marcador = new google.maps.Marker({
+            position: { lat: 5.066, lng: -74.1 },
+            map: map
+        })
+
     }
 
 
-
-    // Función para cargar los páramos y sus ubicaciones -- TOCA ARREGLARLO , NO FUNCIONA, solo con postman V1
-    /*
-    async function loadParamos() {
-        try {
-            const response = await fetch('/api/getParamos');
-            const paramos = await response.json();
-            const paramoSelect = document.getElementById('paramo-select');
-
-            paramos.forEach(paramo => {
-                const option = document.createElement('option');
-                option.value = paramo.id;
-                option.textContent = paramo.nombre;
-                paramoSelect.appendChild(option);
-            });
-
-            paramoSelect.addEventListener('change', async (event) => {
-                const selectedParamo = paramos.find(p => p.id == event.target.value);
-                if (selectedParamo) {
-                    // Mover el mapa a la ubicación del páramo seleccionado
-                    const location = { lat: selectedParamo.latitud, lng: selectedParamo.longitud };
-                    map.setCenter(location);
-
-                    // Cargar los viveros correspondientes al páramo seleccionado
-                    await loadViveros(selectedParamo.id);
-                }
-            });
-
-        } catch (error) {
-            console.error('Error al cargar los páramos:', error);
-        }
-    }*/
-
     // PARAMOS
-
     // Función  de Paramos V2
     async function getParamos() {
         const token = localStorage.getItem("token");
@@ -70,8 +47,11 @@
 
             paramos.forEach(paramo => {
                 const option = document.createElement("option");
-                option.value = paramo.id;
-                option.textContent = paramo.complejo_nombre;    //Nombre de la columna que quiera traer de la BD para mostrar en el menu desplegable
+                option.value = paramo.objeto_codigo;
+                option.textContent = paramo.complejo_nombre+'-'+paramo.objeto_codigo;    //Nombre de la columna que quiera traer de la BD para mostrar en el menu desplegable
+                option.setAttribute('data-latitud',paramo.latitud);
+                option.setAttribute('data-longitud',paramo.longitud);
+
                 paramoSelect.appendChild(option);
             });
 
@@ -231,5 +211,43 @@
                 tableBody.appendChild(row);
             });
         });
+
+        const paramoSelect = document.getElementById("paramo-id"); 
+        paramoSelect.addEventListener("change", async (event) => {
+            const opcionParamo= event.target.options[event.target.selectedIndex];
+            const posicionParamo = {
+                lat:parseFloat(opcionParamo.getAttribute('data-latitud')),
+                lng:parseFloat(opcionParamo.getAttribute('data-longitud'))
+            }
+            map.setCenter(posicionParamo);
+            marcador.setPosition(posicionParamo)
+
+            const token = localStorage.getItem("token");
+            const valor = event.target.value; //codigo_objeto del Paramo
+            const respuesta = await fetch(`http://localhost:3000/getViverosByParamo/${valor}`,{
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+        });
+            
+            const viveros = await respuesta.json();
+            const viveroSelect = document.getElementById("vivero-id"); 
+            viveroSelect.innerHTML=''; //Limpiar select primero
+            const prueba = document.createElement("option");
+            prueba.value = '';
+            prueba.textContent = 'Seleccione';
+                viveroSelect.appendChild(prueba);
+
+
+            viveros.forEach(vivero => {
+                const option = document.createElement("option");
+                option.value = vivero.id;
+                option.textContent = vivero.nombre;
+                viveroSelect.appendChild(option);
+            });
+        });
+
     });
 

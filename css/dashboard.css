@@ -32,8 +32,8 @@ th {
 }
 
 
-/*Estilos del boton
-button {
+/*Estilos del boton de Ver todas las plantas*/
+.buttonPlants {
     padding: 12px;
     background-color: var(--avocado);
     color: white;
@@ -46,12 +46,17 @@ button {
     width: 50%; 
     display: block;
     text-align: center;
+
 }
 
-button:hover {
+.buttonPlants:hover {
     background-color: var(--fern-green);
 }
-    */
+
+a {
+    text-decoration: none; 
+}
+    
 
 /*Estilos para los botones modificar y eliminar del dashboard*/ 
 /* Centrar los íconos en la columna */
@@ -86,7 +91,7 @@ button:hover {
 
 /* Estilos de hover */
 .modify_button:hover i {
-    color: #588157ff; /* Color de hover, ej: Fern Green */
+    color: #588157ff; /* Color de hover, Fern Green */
 }
 
 .delete_button:hover i {
