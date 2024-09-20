@@ -32,7 +32,7 @@ window.onload = (event) => {
             /*if (response.ok) {
                 loginMessage.textContent = 'Login Exitoso';
                 loginMessage.style.color = 'green'
-                window.location.href = `./formPlants2.html#${encodeData}`;
+                window.location.href = `./formplants2.html#${encodeData}`;
             } else {
                 loginMessage.textContent = data.message || 'Error en el Login';
                 loginMessage.style.color = 'red'
@@ -49,7 +49,7 @@ window.onload = (event) => {
                 
                     // Redirigir a Formulario plantas después de mostrar el mensaje
                     setTimeout(() => {
-                       // window.location.href = `./formPlants2.html#${encodeData}`;
+                       // window.location.href = `./formplants2.html#${encodeData}`;
                         window.location.href = `./dashboard.html`;
 
                     }, 500); // 0.5 segundo de retraso antes de la redirección

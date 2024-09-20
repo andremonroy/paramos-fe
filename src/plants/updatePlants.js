@@ -1,5 +1,5 @@
 //Cambios por vercel
-const apiUrl = 'https://paramos-backend.vercel.app';
+const apiUrlUpdate = 'https://paramos-backend.vercel.app';
 
 document.addEventListener('DOMContentLoaded', async (event) => {
     const idPlant = getQueryParams('id');
@@ -47,7 +47,7 @@ async function loadPlant(id) {
     
     try {
         //const response = await fetch(`http://localhost:3000/plants/${id}`, {
-        const response = await fetch(`${apiUrl}/plants/${id}`, {
+        const response = await fetch(`${apiUrlUpdate}/plants/${id}`, {
 
             method: 'GET',
             headers: {
@@ -64,7 +64,7 @@ async function loadPlant(id) {
 async function updatePlant(id, tag, especie, fecha_germinacion, vivero_id, condiciones_iniciales) {
     try {
         //const response = await fetch(`http://localhost:3000/updatePlants/${id}`, {
-        const response = await fetch(`${apiUrl}/updatePlants/${id}`, {
+        const response = await fetch(`${apiUrlUpdate}/updatePlants/${id}`, {
 
             method: 'PUT',
             headers: {
